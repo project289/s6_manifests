@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="github" fetch="https://github.com/" />
-
+  <!-- Core Exynos 7420 repositories -->
   <project name="samsungexynos7420/android_device_samsung_universal7420-common" path="device/samsung/universal7420-common" remote="github" revision="lineage-21.0" />
-
   <project name="samsungexynos7420/android_device_samsung_zeroltexx" path="device/samsung/zeroltexx" remote="github" revision="lineage-21.0" />
-
   <project name="samsungexynos7420/android_kernel_samsung_universal7420" path="kernel/samsung/universal7420" remote="github" revision="lineage-21.0" />
-
   <project name="samsungexynos7420/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="lineage-21.0" />
+
+  <!-- These are the missing pieces for a proper build -->
+  <project name="samsungexynos7420/android_hardware_samsung_slsi_exynos7420" path="hardware/samsung_slsi/exynos7420" remote="github" revision="lineage-21.0" />
+  <project name="samsungexynos7420/android_hardware_samsung_slsi_exynos" path="hardware/samsung_slsi/exynos" remote="github" revision="lineage-21.0" />
+  <project name="samsungexynos7420/android_hardware_samsung_slsi_openmax" path="hardware/samsung_slsi/openmax" remote="github" revision="lineage-21.0" />
+  <project name="samsungexynos7420/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-21.0" />
+  <project name="samsungexynos7420/android_external_stlport" path="external/stlport" remote="github" revision="lineage-21.0" />
+
+  <!-- Patches – still required -->
+  <project name="samsungexynos7420/7420_patches" path="patches/7420_patches" remote="github" revision="main" />
 </manifest>
