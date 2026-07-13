@@ -7,12 +7,14 @@
   <project name="project289/android_device_samsung_zeroltexx" path="device/samsung/zeroltexx" remote="github" revision="lineage-22.1" />
   <project name="project289/android_kernel_samsung_universal7420" path="kernel/samsung/universal7420" remote="github" revision="lineage-22.1" />
   <project name="project289/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="lineage-22.1" />
-  <project name="project289/7420_patches" path="patches/7420_patches" remote="github" revision="android15" />
 
-  <!-- LineageOS hardware -->
-  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-22.1" />
-  <project name="LineageOS/android_hardware_samsung_slsi_exynos" path="hardware/samsung_slsi/exynos" remote="github" revision="lineage-22.1" />
-  <project name="LineageOS/android_hardware_samsung_slsi_openmax" path="hardware/samsung_slsi/openmax" remote="github" revision="lineage-22.1" />
+  <!-- Patches – fixed to main (android15 didn't exist) -->
+  <project name="project289/7420_patches" path="patches/7420_patches" remote="github" revision="main" />
+
+  <!-- LineageOS hardware – fixed to lineage-22.0 (lineage-22.1 doesn't exist for these) -->
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-22.0" />
+  <project name="LineageOS/android_hardware_samsung_slsi_exynos" path="hardware/samsung_slsi/exynos" remote="github" revision="lineage-22.0" />
+  <project name="LineageOS/android_hardware_samsung_slsi_openmax" path="hardware/samsung_slsi/openmax" remote="github" revision="lineage-22.0" />
 
   <!-- Linaro BSP (keep from samsungexynos7420) -->
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_exynos" path="hardware/samsung_slsi/linaro_exynos" remote="github" revision="lineage-21.0" />
@@ -21,6 +23,6 @@
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_graphics" path="hardware/samsung_slsi/linaro_graphics" remote="github" revision="lineage-21.0" />
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_config" path="hardware/samsung_slsi/linaro_config" remote="github" revision="lineage-21.0" />
 
-  <!-- SEPolicy (keep from samsungexynos7420) -->
+  <!-- SEPolicy -->
   <project name="samsungexynos7420/android_device_samsung_slsi_sepolicy" path="device/samsung/slsi_sepolicy" remote="github" revision="lineage-21" />
 </manifest>
