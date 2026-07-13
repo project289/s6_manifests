@@ -1,0 +1,47 @@
+name: Build LineageOS 22.1 for S6 Edge
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git repo python3 openjdk-17-jdk \
+            build-essential bc bison flex libssl-dev make \
+            ccache libxml2-utils lzop pngcrush rsync \
+            schedtool squashfs-tools xsltproc zip zlib1g-dev \
+            g++-multilib gcc-multilib lib32ncurses-dev \
+            lib32readline-dev lib32z1-dev libelf-dev \
+            libxml2-dev liblz4-tool libncurses5-dev \
+            libsdl1.2-dev libssl-dev libxml2-utils \
+            lzma lzop pngcrush rsync schedtool \
+            squashfs-tools xsltproc zip zlib1g-dev
+
+      - name: Sync source
+        run: |
+          mkdir -p ~/android/lineage
+          cd ~/android/lineage
+          repo init -u https://github.com/project289/s6_manifests.git -b main -m zeroltexx.xml
+          repo sync -c -j2 --force-sync --no-clone-bundle --no-tags
+
+      - name: Build ROM
+        run: |
+          cd ~/android/lineage
+          source build/envsetup.sh
+          export TARGET_PRODUCT=lineage_zeroltexx
+          export TARGET_BUILD_VARIANT=userdebug
+          export TARGET_RELEASE=aosp_current
+          export TARGET_DEVICE=zeroltexx
+          export NINJA_ARGS="-j2"
+          make -j2 bacon
+
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: lineage-zeroltexx
+          path: ~/android/lineage/out/target/product/zeroltexx/*.zip
