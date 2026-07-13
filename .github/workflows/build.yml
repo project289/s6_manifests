@@ -27,7 +27,12 @@ jobs:
           mkdir -p ~/android/lineage
           cd ~/android/lineage
           repo init -u https://github.com/project289/s6_manifests.git -b main -m zeroltexx.xml
-          repo sync -c -j2 --force-sync --no-clone-bundle --no-tags
+          repo sync -c -j1 --force-sync --no-clone-bundle --no-tags --fail-fast
+          # Ensure the build system is present
+          if [ ! -f build/envsetup.sh ]; then
+            echo "❌ Sync failed: build/envsetup.sh not found"
+            exit 1
+          fi
 
       - name: Build ROM
         run: |
