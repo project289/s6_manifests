@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+================================================================================
+LineageOS 22.1 (Android 15) for Samsung Galaxy S6 Edge (zeroltexx)
+Manifest by project289 (Freewriter27654)
+GitHub: https://github.com/project289
+================================================================================
+How to use:
+  repo init -u https://github.com/project289/s6_manifests.git -b main -m zeroltexx.xml
+  repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
+================================================================================
+-->
 <manifest>
   <remote name="github" fetch="https://github.com/" />
 
-  <!-- Your forks (lineage-22.1) -->
+  <!-- ============================================================ -->
+  <!-- YOUR FORKS (project289) – lineage-22.1 for Android 15       -->
+  <!-- ============================================================ -->
   <project name="project289/android_device_samsung_universal7420-common" path="device/samsung/universal7420-common" remote="github" revision="lineage-22.1" />
   <project name="project289/android_device_samsung_zeroltexx" path="device/samsung/zeroltexx" remote="github" revision="lineage-22.1" />
   <project name="project289/android_kernel_samsung_universal7420" path="kernel/samsung/universal7420" remote="github" revision="lineage-22.1" />
   <project name="project289/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="lineage-22.1" />
 
-  <!-- Patches – exists: lineage-20.0 -->
+  <!-- ============================================================ -->
+  <!-- PATCHES – lineage-20.0 (android15 branch didn't exist)      -->
+  <!-- ============================================================ -->
   <project name="project289/7420_patches" path="patches/7420_patches" remote="github" revision="lineage-20.0" />
 
-  <!-- LineageOS hardware – use available branches -->
+  <!-- ============================================================ -->
+  <!-- LINEAGEOS HARDWARE – use available branches                  -->
+  <!-- ============================================================ -->
   <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" remote="github" revision="lineage-22.1" />
   <project name="LineageOS/android_hardware_samsung_slsi_exynos" path="hardware/samsung_slsi/exynos" remote="github" revision="lineage-19.1" />
   <project name="LineageOS/android_hardware_samsung_slsi_openmax" path="hardware/samsung_slsi/openmax" remote="github" revision="lineage-19.1" />
 
-  <!-- Linaro BSP – from samsungexynos7420 (lineage-21.0 exists) -->
+  <!-- ============================================================ -->
+  <!-- LINARO BSP (from samsungexynos7420) – lineage-21.0           -->
+  <!-- ============================================================ -->
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_exynos" path="hardware/samsung_slsi/linaro_exynos" remote="github" revision="lineage-21.0" />
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_exynos5" path="hardware/samsung_slsi/linaro_exynos5" remote="github" revision="lineage-21.0" />
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_openmax" path="hardware/samsung_slsi/linaro_openmax" remote="github" revision="lineage-21.0" />
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_graphics" path="hardware/samsung_slsi/linaro_graphics" remote="github" revision="lineage-21.0" />
   <project name="samsungexynos7420/android_hardware_samsung_slsi-linaro_config" path="hardware/samsung_slsi/linaro_config" remote="github" revision="lineage-21.0" />
 
-  <!-- SEPolicy -->
+  <!-- ============================================================ -->
+  <!-- SEPOLICY FOR SLSI HARDWARE – lineage-21                     -->
+  <!-- ============================================================ -->
   <project name="samsungexynos7420/android_device_samsung_slsi_sepolicy" path="device/samsung/slsi_sepolicy" remote="github" revision="lineage-21" />
+
 </manifest>
