@@ -6,7 +6,7 @@ It pulls together all the necessary device trees, kernel, vendor blobs, BSP HALs
 
 ---
 
-## 📦 What's Inside
+## What's Inside
 
 | Component | Source | Branch |
 |-----------|--------|--------|
@@ -23,7 +23,7 @@ It pulls together all the necessary device trees, kernel, vendor blobs, BSP HALs
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 ### 1. Initialize with this manifest
 
